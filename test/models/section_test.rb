@@ -9,4 +9,5 @@ class SectionTest < ActiveSupport::TestCase
     section = Section.new(name: 'name')
     assert section.valid?
   end
+
 end
