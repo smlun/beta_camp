@@ -38,6 +38,11 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  # Gems for automated guard testing
+  gem 'guard-minitest'
+  gem 'minitest-colorize', git: 'https://github.com/ysbaddaden/minitest-colorize'
+  gem 'terminal-notifier-guard'
+  gem 'terminal-notifier'
 end
 
 group :development do
