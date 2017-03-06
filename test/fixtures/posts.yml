@@ -1,11 +1,10 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
 one:
   link: MyString
   description: MyText
-  section: one
+  section: valid
 
 two:
   link: MyString
   description: MyText
-  section: two
+  section: valid
