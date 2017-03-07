@@ -1,0 +1,8 @@
+<h1>HELLO BITCHES</h1>
+
+  <% @sections.each do |section| %>
+  <%= section.name %>
+  <%= link_to 'Edit', edit_section_path(section) %><br>
+  <% end %>
+
+  <%= link_to 'Create new Section', new_section_path %>
