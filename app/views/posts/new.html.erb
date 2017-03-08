@@ -1,7 +1,8 @@
 <h1>Add a new Post</h1>
 
-<%= bootstrap_form_for [@section,@section.posts.new] do |f| %>
+<%= bootstrap_form_for [@section,@section.posts.build] do |f| %>
   <%= f.text_field :link %>
   <%= f.text_field :description %>
+  <%= f.file_field :post_image %>
   <%= f.submit "Create" %>
 <% end %>

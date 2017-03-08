@@ -10,7 +10,10 @@
       <div>
         <%= post.link %><br>
         <%= post.description %> <br>
-        <%= link_to 'Delete', posts_index_path(post), method: :delete, data: { confirm: 'ARE YOU SURE?' } %>
+          <%- if post.post_image? %>
+            <%= image_tag post.post_image, size: "50x50" %>
+          <% end %>
+        <%= link_to 'Delete', section_post_path(section, post), method: :delete, data: { confirm: 'ARE YOU SURE?' } %>
       </div> <br>
     <% end %>
   <hr>
