@@ -1,2 +1,7 @@
-<h1>Posts#new</h1>
-<p>Find me in app/views/posts/new.html.erb</p>
+<h1>Add a new Post</h1>
+
+<%= bootstrap_form_for [@section,@section.posts.new] do |f| %>
+  <%= f.text_field :link %>
+  <%= f.text_field :description %>
+  <%= f.submit "Create" %>
+<% end %>

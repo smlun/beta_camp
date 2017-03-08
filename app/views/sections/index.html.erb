@@ -1,8 +1,19 @@
 <h1>HELLO BITCHES</h1>
 
   <% @sections.each do |section| %>
-  <%= section.name %>
-  <%= link_to 'Edit', edit_section_path(section) %><br>
+    <h1><%= section.name %></h1>
+    <%= link_to 'Edit', edit_section_path(section) %>
+    <%= link_to 'Remove', section_path(section), method: :delete, data: { confirm: 'ARE YOU SURE?' }%>
+    <h3><%= link_to 'Add new resource', new_section_post_path(section) %></h3>
+    <br>
+    <% section.posts.each do |post| %>
+      <div>
+        <%= post.link %><br>
+        <%= post.description %> <br>
+        <%= link_to 'Delete', posts_index_path(post), method: :delete, data: { confirm: 'ARE YOU SURE?' } %>
+      </div> <br>
+    <% end %>
+  <hr>
   <% end %>
 
   <%= link_to 'Create new Section', new_section_path %>
