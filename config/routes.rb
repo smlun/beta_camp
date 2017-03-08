@@ -17,6 +17,13 @@ Rails.application.routes.draw do
   resources :sections do
     resources :posts
   end
+
+  namespace :api do
+    namespace :v1 do
+      resources :posts
+    end
+  end
+
   get 'sections/index'
   root 'sections#index'
 end
