@@ -6,16 +6,18 @@ class SectionTest < ActiveSupport::TestCase
   # end
 
   def setup
-    @section = sections(:valid)
+    @section = Section.new(name: 'name')
   end
 
   test 'section should have valid name' do
-    section = Section.new(name: 'name')
-    assert section.valid?
+    @section.name = nil
+    refute @section.valid?, 'saved section without name'
+    assert_not_nil @section.errors[:name], 'no validation error for name present'
   end
 
-  test '#posts' do
-    assert_equal 2, @section.posts.size
+  test 'can create a section' do
+    assert_difference('Section.count') do
+      post sections_url, params: { section: { name: 'name' } }
+    end
   end
-
 end

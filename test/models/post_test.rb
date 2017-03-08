@@ -5,7 +5,7 @@ class PostTest < ActiveSupport::TestCase
   #   assert true
   # end
 
-  # pending
+  # 
   # test 'valid post' do
   #   post = Post.new(link: 'www.yahoo.com', description: 'this is a test')
   #   assert post.valid?
