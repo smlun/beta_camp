@@ -14,12 +14,13 @@ class SectionsController < ApplicationController
   def create
     @section = Section.new(section_params)
     @section.save
-    redirect_to @section
+    redirect_to sections_path
   end
 
   def edit
     @section = Section.find(params[:id])
     @section.save
+    redirect_to sections_path
   end
 
   def delete

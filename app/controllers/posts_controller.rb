@@ -15,14 +15,14 @@ class PostsController < ApplicationController
 
   def create
     @section = Section.find(params[:section_id])
-    @post = @section.posts.build(post_params)
+    @post = @section.posts.new(post_params)
     @post.save
     redirect_to sections_path
   end
 
   def edit
+    @section = Section.find(params[:section_id])
     @post = Post.find(params[:id])
-    @post.save
   end
 
   def destroy
@@ -32,7 +32,15 @@ class PostsController < ApplicationController
   end
 
   def update
+    @section = Section.find(params[:section_id])
+    @post = Post.find(params[:id])
+    if @post.update(post_params)
+      redirect_to sections_path
+    else
+      render 'edit'
+    end
   end
+
 private
   def post_params
     params.require(:post).permit(:link, :description, :post_image)
