@@ -14,17 +14,17 @@ class PostImageUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
-  def extension_whitelist
- 	 %w(jpg jpeg png gif)
-  end
+  # def extension_whitelist
+ # 	 %w(jpg jpeg png gif pdf doc docx ppt xls txt)
+  # end
+  #
+  # def content_type_whitelist
+ # 	 /image|document/
+  # end
 
-  def content_type_whitelist
- 	 /image\//
-  end
-
-  def content_type_backlist
-   ['application/text', 'application/zip']
-  end
+  # def content_type_backlist
+  #  ['application/text', 'application/zip']
+  # end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url

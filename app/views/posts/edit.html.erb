@@ -1,2 +1,8 @@
-<h1>Posts#edit</h1>
-<p>Find me in app/views/posts/edit.html.erb</p>
+<h1>Edit this post</h1>
+<%= bootstrap_form_for ([@section,@post]) do |f| %>
+  <%= f.text_field :link %>
+  <%= f.text_field :description %>
+  <%= f.file_field :post_image %>
+  <%= f.submit "Save" %>
+<% end %>
+<%= link_to 'Back', sections_path %>
